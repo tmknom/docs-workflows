@@ -1,6 +1,6 @@
 # docs-workflows
 
-A collection of docs workflows.
+Collection of docs workflows.
 
 ## Description
 
