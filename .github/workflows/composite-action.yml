@@ -23,13 +23,6 @@ jobs:
         with:
           ref: ${{ env.BASE_BRANCH }}
 
-      - name: Generate unique identifier
-        id: unique
-        run: |
-          set -x
-          identifier="${GITHUB_JOB}-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}-${GITHUB_WORKFLOW_SHA}"
-          echo "identifier=${identifier}" >> "${GITHUB_OUTPUT}"
-
       # https://github.com/tmknom/actdocs
       - name: Inject document
         env:
