@@ -34,9 +34,6 @@ jobs:
           ghcr.io/tmknom/actdocs inject --sort \
           --file "${MD_FILE}" "${YAML_FILE}"
 
-      - name: Git Config
-        uses: tmknom/git-config-action@6ddb0c7929ae61b4bbfb5a0800d4ca72fa2584de # v0.1.0
-
       - name: Git Push
         id: push
         uses: tmknom/git-push-action@7f731ecbcd08c4dce6bcf2b0b79d117f6cbc5864 # v0.2.0
