@@ -37,6 +37,8 @@ jobs:
       - name: Git Push
         id: push
         uses: tmknom/git-push-action@6d74abbc06f6d2e338998a3b2ece41056cedf060 # v0.3.0
+        with:
+          message: 'docs: update README using actdocs'
 
       - name: Create PR
         if: ${{ steps.push.outputs.pushed == 'true' }}
