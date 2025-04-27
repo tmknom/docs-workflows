@@ -15,13 +15,11 @@ jobs:
     permissions:
       contents: write
       pull-requests: write
-    env:
-      BASE_BRANCH: ${{ github.event.repository.default_branch }}
     steps:
       - name: Checkout
         uses: tmknom/checkout-action@v1
         with:
-          ref: ${{ env.BASE_BRANCH }}
+          ref: ${{ github.event.repository.default_branch }}
 
       # https://github.com/tmknom/actdocs
       - name: Inject document
@@ -45,6 +43,5 @@ jobs:
         uses: tmknom/create-pull-request-action@v0
         with:
           head-branch: ${{ steps.push.outputs.branch }}
-          base-branch: ${{ env.BASE_BRANCH }}
           title: ${{ steps.push.outputs.subject }}
           body: ${{ steps.push.outputs.body }}
